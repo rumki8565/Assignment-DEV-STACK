@@ -7,6 +7,7 @@ import TechnologySection, {
   type Technology,
 } from "./Components/TechnologySection";
 import StackSidebar from "./Components/StackSidebar";
+import Footer from "./Components/Footer";
 
 function App() {
   const [stack, setStack] = useState<Technology[]>([]);
@@ -58,6 +59,7 @@ function App() {
           />
         </div>
       </div>
+      <Footer></Footer>
       <ToastContainer position="bottom-right" autoClose={2500} />
     </>
   );
