@@ -41,27 +41,15 @@ const TechnologySection = ({ stack, onAdd }: TechnologySectionProps) => {
   }
 
   return (
-    <div>
-      <h2 className="text-3xl font-bold">
-        Explore the{" "}
-        <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
-          Technologies
-        </span>
-      </h2>
-      <p className="mt-2 text-gray-600">
-        Pick one technology per category to build your ideal stack.
-      </p>
-
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {technologies.map((tech) => (
-          <TechCard
-            key={tech.id}
-            technology={tech}
-            isAdded={stack.some((t) => t.id === tech.id)}
-            onAdd={onAdd}
-          />
-        ))}
-      </div>
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {technologies.map((tech) => (
+        <TechCard
+          key={tech.id}
+          technology={tech}
+          isAdded={stack.some((t) => t.id === tech.id)}
+          onAdd={onAdd}
+        />
+      ))}
     </div>
   );
 };

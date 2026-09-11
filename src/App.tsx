@@ -38,13 +38,25 @@ function App() {
     <>
       <Nav />
       <Banner />
-      <div className="max-w-7xl mx-auto px-4 py-16 md:px-8 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
-        <TechnologySection stack={stack} onAdd={handleAdd} />
-        <StackSidebar
-          stack={stack}
-          onRemove={handleRemove}
-          onRemoveAll={handleRemoveAll}
-        />
+      <div className="max-w-7xl mx-auto px-4 py-16 md:px-8">
+        <h2 className="text-3xl font-bold">
+          Explore the{" "}
+          <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
+            Technologies
+          </span>
+        </h2>
+        <p className="mt-2 text-gray-600">
+          Pick one technology per category to build your ideal stack.
+        </p>
+
+        <div className="mt-8 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 items-start">
+          <TechnologySection stack={stack} onAdd={handleAdd} />
+          <StackSidebar
+            stack={stack}
+            onRemove={handleRemove}
+            onRemoveAll={handleRemoveAll}
+          />
+        </div>
       </div>
       <ToastContainer position="bottom-right" autoClose={2500} />
     </>
