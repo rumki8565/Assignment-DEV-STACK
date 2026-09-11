@@ -1,0 +1,69 @@
+// src/components/TechnologySection.tsx
+import { useState, useEffect } from "react";
+import technologiesData from "../data/technologies.json";
+import TechCard from "./TechCard";
+
+export interface Technology {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  icon: string;
+  rating: number;
+  difficulty: string;
+  badge: string;
+}
+
+interface TechnologySectionProps {
+  stack: Technology[];
+  onAdd: (technology: Technology) => void;
+}
+
+const TechnologySection = ({ stack, onAdd }: TechnologySectionProps) => {
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulated async load so the loading state is demonstrable,
+    // even though the JSON import itself is instant.
+    const timer = setTimeout(() => {
+      setTechnologies(technologiesData as Technology[]);
+      setIsLoading(false);
+    }, 400);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <p className="text-gray-500 text-center py-16">Loading technologies...</p>
+    );
+  }
+
+  return (
+    <div>
+      <h2 className="text-3xl font-bold">
+        Explore the{" "}
+        <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
+          Technologies
+        </span>
+      </h2>
+      <p className="mt-2 text-gray-600">
+        Pick one technology per category to build your ideal stack.
+      </p>
+
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {technologies.map((tech) => (
+          <TechCard
+            key={tech.id}
+            technology={tech}
+            isAdded={stack.some((t) => t.id === tech.id)}
+            onAdd={onAdd}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TechnologySection;
