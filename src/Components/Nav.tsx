@@ -7,32 +7,33 @@ const Nav = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="flex items-center justify-between px-4 py-3 md:px-8">
-        {/* Mobile: hamburger on the left */}
-        <button
-          type="button"
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
+      <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 px-4 py-3 md:px-8">
+        {/* Left: hamburger (mobile) + brand */}
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
 
-        {/* Brand: logo mark + name */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-brand-start via-brand-mid to-brand-end flex items-center justify-center text-white font-bold text-sm">
-            DS
-          </div>
-          <div className="text-xl font-bold">
-            Dev{" "}
-            <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
-              Stack
-            </span>
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-brand-start via-brand-mid to-brand-end flex items-center justify-center text-white font-bold text-sm">
+              DS
+            </div>
+            <div className="text-xl font-bold">
+              Dev{" "}
+              <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
+                Stack
+              </span>
+            </div>
           </div>
         </div>
 
-        {/* Desktop center links */}
-        <ul className="hidden md:flex gap-6 font-medium">
+        {/* Center: desktop nav links */}
+        <ul className="hidden md:flex justify-center gap-6 font-medium">
           {navLinks.map((link, index) => (
             <li
               key={link}
@@ -44,13 +45,16 @@ const Nav = () => {
         </ul>
 
         {/* Right: auth buttons (always visible) */}
-        <div className="flex items-center gap-3">
-          <button type="button" className="hidden sm:inline font-medium">
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="whitespace-nowrap text-sm font-medium"
+          >
             Sign In
           </button>
           <button
             type="button"
-            className="rounded-full px-4 py-2 text-white bg-gradient-to-r from-brand-start via-brand-mid to-brand-end"
+            className="whitespace-nowrap rounded-full px-3 py-1.5 text-sm text-white bg-gradient-to-r from-brand-start via-brand-mid to-brand-end"
           >
             Sign Up
           </button>
