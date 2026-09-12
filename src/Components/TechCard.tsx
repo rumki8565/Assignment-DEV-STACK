@@ -1,4 +1,3 @@
-// src/components/TechCard.tsx
 import type { Technology } from "./TechnologySection";
 
 interface TechCardProps {

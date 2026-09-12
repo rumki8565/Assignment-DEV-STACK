@@ -1,4 +1,3 @@
-// src/components/TechnologySection.tsx
 import { useState, useEffect } from "react";
 import technologiesData from "../data/technologies.json";
 import TechCard from "./TechCard";
@@ -24,8 +23,6 @@ const TechnologySection = ({ stack, onAdd }: TechnologySectionProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulated async load so the loading state is demonstrable,
-    // even though the JSON import itself is instant.
     const timer = setTimeout(() => {
       setTechnologies(technologiesData as Technology[]);
       setIsLoading(false);
