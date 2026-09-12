@@ -39,7 +39,7 @@ function App() {
     <>
       <Nav />
       <Banner />
-      <div className="max-w-7xl mx-auto px-4 py-16 md:px-8">
+      <div className="container mx-auto px-4 py-16 md:px-8">
         <h2 className="text-3xl font-bold">
           Explore the{" "}
           <span className="bg-gradient-to-r from-brand-start via-brand-mid to-brand-end bg-clip-text text-transparent">
