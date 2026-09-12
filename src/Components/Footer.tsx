@@ -1,4 +1,3 @@
-// src/components/Footer.tsx
 const Footer = () => {
   return (
     <footer className="container mx-auto border-t border-gray-100 px-4 py-12 md:px-8">
