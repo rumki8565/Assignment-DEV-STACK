@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import technologiesData from "../data/technologies.json";
+import technologiesData from "../Data/technologies.json";
 import TechCard from "./TechCard";
 
 export interface Technology {
