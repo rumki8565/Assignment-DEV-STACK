@@ -44,7 +44,6 @@ const TechCard = ({ technology, isAdded, onAdd }: TechCardProps) => {
       {/* Add to Stack button */}
       <button
         type="button"
-        disabled={isAdded}
         onClick={() => onAdd(technology)}
         className={`mt-4 w-full rounded-lg py-2.5 text-sm font-medium text-white transition ${
           isAdded
